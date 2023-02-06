@@ -23,9 +23,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  const [name, setName] = useState("");
-  const [age, setAge] = useState("");
-
+  
   function addUser() {
     Axios.post("http://localhost:3001/addUser", { name, age })
       .then(() => alert("successfully added user"))
