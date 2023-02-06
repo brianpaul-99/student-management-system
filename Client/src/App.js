@@ -23,12 +23,6 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  
-  function addUser() {
-    Axios.post("http://localhost:3001/addUser", { name, age })
-      .then(() => alert("successfully added user"))
-      .catch((e) => alert(e));
-  }
   return <RouterProvider router={router} />;
 }
 
