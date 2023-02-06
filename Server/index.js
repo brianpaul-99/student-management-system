@@ -6,6 +6,7 @@ const route = 3001;
 
 const admin = require("firebase-admin");
 
+//credential validation key
 const serviceAccount = require("./serviceAccountKey.json");
 
 //Initialize firebase-admin
@@ -21,12 +22,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const db = admin.firestore();
 
 var jsonParser = bodyParser.json();
-
-app.get("/status", async (req, res) => {
-  const users = await db.collection("users").doc("Y7y6Lji3tsfpkdY7RbJM").get();
-
-  res.send(users._fieldsProto);
-});
 
 app.get("/getStudents", (req, res) => {
   db.collection("students")
