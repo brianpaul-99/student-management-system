@@ -72,7 +72,6 @@ export default function Students() {
 
   return (
     <div className="students">
-      {/* <img className="bg" src={bg} /> */}
       <h1>Manage Students Here</h1>
       {/*student table*/}
       <StudentsTable />
