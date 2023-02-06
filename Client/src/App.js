@@ -26,12 +26,6 @@ function App() {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
 
-  useEffect(() => {
-    Axios.get("http://localhost:3001/getUsers").then((res) =>
-      console.log(res.data)
-    );
-  }, []);
-
   function addUser() {
     Axios.post("http://localhost:3001/addUser", { name, age })
       .then(() => alert("successfully added user"))
