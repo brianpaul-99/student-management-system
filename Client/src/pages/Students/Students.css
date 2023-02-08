@@ -9,11 +9,20 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+.students > h1 {
+  z-index: 1;
+}
 .students th,
 td {
   border: 1px solid white;
 }
-
+.underlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
 .bg {
   opacity: 0.6;
   position: absolute;
@@ -27,11 +36,16 @@ td {
   flex-direction: column;
   align-items: center;
   width: 500px;
+  z-index: 1;
 }
 .headers {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+}
+.headers > h3 {
+  flex: 1;
+  text-align: center;
 }
 
 .list {
@@ -41,17 +55,43 @@ td {
   overflow-y: scroll;
   text-align: center;
   scrollbar-width: thin;
-  border: 5px red solid;
-  border-radius: 10px;
+  border: 4px rgb(14, 103, 121) solid;
+  border-radius: 5px;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  /* box-sizing:content-box; */
+}
+.list::-webkit-scrollbar {
+  width: 4px;
 }
 
+/* Track */
+.list::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 15px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
 .listRow {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 5px;
+  border-bottom: 1px rgb(14, 103, 121) solid;
+  padding: 2px;
+}
+.listRow:last-child {
+  border-bottom: none;
+  margin-bottom: 0px;
 }
 
 .listRow div {
@@ -64,6 +104,7 @@ td {
   align-items: center;
   width: 300px;
   margin: 20px auto;
+  z-index: 1;
 }
 
 .row {
@@ -85,6 +126,8 @@ td {
   margin: 5px;
   padding: 4px;
   font-weight: bold;
+  background-color: rgb(14, 103, 121);
+  color: whitesmoke;
 }
 
 .dateRow {
@@ -106,20 +149,4 @@ td {
   object-fit: cover;
   height: 100%;
   width: 100%;
-}
-
-.iconButton {
-  all: unset;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  height: 25px;
-  width: 25px;
-  background-color: white;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
-
-.iconButton:hover {
-  opacity: 0.7;
 }

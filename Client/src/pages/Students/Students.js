@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { addStudent_api, getStudents_api } from "../../apiCalls";
 import bg from "../../assets/bg.jpg";
 export default function Students() {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState("");
   const [firstName, setFirst] = useState("");
   const [lastName, setLast] = useState("");
   const [studentList, setStudentList] = useState([]);
@@ -32,6 +32,7 @@ export default function Students() {
         getStudents();
         setFirst("");
         setLast("");
+        setStartDate("");
       });
     } else {
       alert(
@@ -72,7 +73,6 @@ export default function Students() {
 
   return (
     <div className="students">
-      {/* <img className="bg" src={bg} /> */}
       <h1>Manage Students Here</h1>
       {/*student table*/}
       <StudentsTable />
@@ -108,6 +108,7 @@ export default function Students() {
         </div>
         <button onClick={() => submitInfo()}>Submit</button>
       </div>
+      <div className="underlay" />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
 :root {
-  --primary: #ff004c;
+  --primary: rgb(14, 103, 121);
 }
 header {
   /* text-decoration: underline var(--primary); */
@@ -14,7 +14,7 @@ nav {
 nav > h1 {
   justify-self: right;
   padding: 4px;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 4px solid var(--primary);
 }
 header nav a {
   text-align: center;
